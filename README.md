@@ -147,6 +147,9 @@ lib/
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License
+
+---
+[Download Elavo APK](https://upload.app/download/elavo/com.example.elavo/5616c0830a364b74b2ddfd179dde70b1d396ff96490ccfa994f2ac223be1ad2b)
 
 
