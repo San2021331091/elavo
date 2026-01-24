@@ -15,25 +15,85 @@
 ## Screenshots
 
 Here are some screenshots of the app:
+<style>
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+  }
 
-![Splash Screen](screenshots/splash.png)
-![Home Screen](screenshots/homepage.png)  
-![Recipe Details](screenshots/recipesection.png)  
-![Add Recipe](screenshots/addrecipe.png)
-![My Recipe](screenshots/myrecipe.png)
-![Search Recipe](screenshots/search.png)
-![Recipe Category](screenshots/categorysection.png)
-![Login ](screenshots/login.png)
-![Register](screenshots/register.png)
-![Profile](screenshots/profile.png)
+  .screenshot-grid figure {
+    text-align: center;
+    margin: 0;
+  }
 
+  .screenshot-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  }
 
+  .screenshot-grid figcaption {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #555;
+  }
+</style>
 
+<div class="screenshot-grid">
+  <figure>
+    <img src="screenshots/splash.png" alt="Splash Screen">
+    <figcaption>Splash Screen</figcaption>
+  </figure>
 
+  <figure>
+    <img src="screenshots/homepage.png" alt="Home Screen">
+    <figcaption>Home Screen</figcaption>
+  </figure>
 
+  <figure>
+    <img src="screenshots/recipesection.png" alt="Recipe Details">
+    <figcaption>Recipe Details</figcaption>
+  </figure>
 
+  <figure>
+    <img src="screenshots/addrecipe.png" alt="Add Recipe">
+    <figcaption>Add Recipe</figcaption>
+  </figure>
 
+  <figure>
+    <img src="screenshots/myrecipe.png" alt="My Recipe">
+    <figcaption>My Recipe</figcaption>
+  </figure>
 
+  <figure>
+    <img src="screenshots/search.png" alt="Search Recipe">
+    <figcaption>Search</figcaption>
+  </figure>
+
+  <figure>
+    <img src="screenshots/categorysection.png" alt="Recipe Category">
+    <figcaption>Category</figcaption>
+  </figure>
+
+  <figure>
+    <img src="screenshots/login.png" alt="Login">
+    <figcaption>Login</figcaption>
+  </figure>
+
+  <figure>
+    <img src="screenshots/register.png" alt="Register">
+    <figcaption>Register</figcaption>
+  </figure>
+
+  <figure>
+    <img src="screenshots/profile.png" alt="Profile">
+    <figcaption>Profile</figcaption>
+  </figure>
+</div>
 
   
 
