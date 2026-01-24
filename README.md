@@ -15,85 +15,69 @@
 ## Screenshots
 
 Here are some screenshots of the app:
-<style>
-  .screenshot-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 14px;
-    margin-top: 16px;
-  }
+## 📸 Screenshots
 
-  .screenshot-grid figure {
-    text-align: center;
-    margin: 0;
-  }
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/splash.png" width="180"><br>
+      Splash Screen
+    </td>
+    <td align="center">
+      <img src="screenshots/homepage.png" width="180"><br>
+      Home Screen
+    </td>
+    <td align="center">
+      <img src="screenshots/recipesection.png" width="180"><br>
+      Recipe Details
+    </td>
+  </tr>
 
-  .screenshot-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  }
+  <tr>
+    <td align="center">
+      <img src="screenshots/addrecipe.png" width="180"><br>
+      Add Recipe
+    </td>
+    <td align="center">
+      <img src="screenshots/myrecipe.png" width="180"><br>
+      My Recipe
+    </td>
+    <td align="center">
+      <img src="screenshots/search.png" width="180"><br>
+      Search
+    </td>
+  </tr>
 
-  .screenshot-grid figcaption {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #555;
-  }
-</style>
+  <tr>
+    <td align="center">
+      <img src="screenshots/categorysection.png" width="180"><br>
+      Category
+    </td>
+    <td align="center">
+      <img src="screenshots/login.png" width="180"><br>
+      Login
+    </td>
+    <td align="center">
+      <img src="screenshots/register.png" width="180"><br>
+      Register
+    </td>
+  </tr>
 
-<div class="screenshot-grid">
-  <figure>
-    <img src="screenshots/splash.png" alt="Splash Screen">
-    <figcaption>Splash Screen</figcaption>
-  </figure>
+  <tr>
+    <td align="center">
+      <img src="screenshots/profile.png" width="180"><br>
+      Profile
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <img src="screenshots/homepage.png" alt="Home Screen">
-    <figcaption>Home Screen</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/recipesection.png" alt="Recipe Details">
-    <figcaption>Recipe Details</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/addrecipe.png" alt="Add Recipe">
-    <figcaption>Add Recipe</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/myrecipe.png" alt="My Recipe">
-    <figcaption>My Recipe</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/search.png" alt="Search Recipe">
-    <figcaption>Search</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/categorysection.png" alt="Recipe Category">
-    <figcaption>Category</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/login.png" alt="Login">
-    <figcaption>Login</figcaption>
-  </figure>
 
-  <figure>
-    <img src="screenshots/register.png" alt="Register">
-    <figcaption>Register</figcaption>
-  </figure>
-
-  <figure>
-    <img src="screenshots/profile.png" alt="Profile">
-    <figcaption>Profile</figcaption>
-  </figure>
-</div>
 
   
 
