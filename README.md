@@ -71,18 +71,6 @@ Here are some screenshots of the app:
   </tr>
 </table>
 
-
-
-
-
-
-
-
-
-  
-
-> Replace the filenames with your actual images inside the `screenshots/` folder.
-
 ---
 
 ## Getting Started
