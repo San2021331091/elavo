@@ -11,6 +11,25 @@
 - Modern, responsive UI with Flutter's Material Design.
 ---
 
+
+## Screenshots
+
+Here are some screenshots of the app:
+
+![Home Screen](screenshots/homepage.png)  
+![Recipe Details](screenshots/recipesection.png)  
+![Add Recipe](screenshots/addrecipe.png)
+![My Recipe](screenshots/myrecipe.png)
+![Search Recipe](screenshots/search.png)
+
+
+
+  
+
+> Replace the filenames with your actual images inside the `screenshots/` folder.
+
+---
+
 ## Getting Started
 
 ### Prerequisites
