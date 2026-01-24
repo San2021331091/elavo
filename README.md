@@ -16,11 +16,22 @@
 
 Here are some screenshots of the app:
 
+![Splash Screen](screenshots/splash.png)
 ![Home Screen](screenshots/homepage.png)  
 ![Recipe Details](screenshots/recipesection.png)  
 ![Add Recipe](screenshots/addrecipe.png)
 ![My Recipe](screenshots/myrecipe.png)
 ![Search Recipe](screenshots/search.png)
+![Recipe Category](screenshots/categorysection.png)
+![Login ](screenshots/login.png)
+![Register](screenshots/register.png)
+![Profile](screenshots/profile.png)
+
+
+
+
+
+
 
 
 
