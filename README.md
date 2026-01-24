@@ -1,6 +1,6 @@
 # Elavo
 
-**Elavo** is a recipe project made using **Flutter** and **Firebase**. It allows users to explore, add, and manage recipes seamlessly with a modern mobile interface.
+**Elavo** is a recipe project made using **Flutter** and **Supabase**. It allows users to explore, add, and manage recipes seamlessly with a modern mobile interface.
 ---
 
 ## Features
