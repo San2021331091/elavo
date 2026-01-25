@@ -79,8 +79,8 @@ Here are some screenshots of the app:
 
 - [Flutter](https://flutter.dev/docs/get-started/install) >= 3.8.1
 - Dart SDK >= 3.8.1
-- Firebase project (for authentication and database)
-- Supabase account (for managing recipe details)
+  
+- Supabase account (for authenticating and managing recipe details)
 
 ### Installation
 
