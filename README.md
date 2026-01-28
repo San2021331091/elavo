@@ -150,6 +150,6 @@ lib/
 This project is open-source and available under the MIT License
 
 ---
-[Download Elavo APK](https://upload.app/download/elavo/com.example.elavo/5616c0830a364b74b2ddfd179dde70b1d396ff96490ccfa994f2ac223be1ad2b)
+[Download Elavo APK](https://upload.app/download/elavo/com.example.elavo/e084daaa319593bb06c0c6384f1eb2185abbb6a7be945c8cd3e7f276a221b9b0)
 
 
