@@ -95,10 +95,13 @@ class MyProfilePage extends StatelessWidget {
               const SizedBox(height: 15),
 
               // Email
-              Text(
+             Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+              child: Text(
                 email!,
                 style: AppWidget.boldfieldTextStyle(color: Colors.white),
               ),
+             ),
 
               const SizedBox(height: 50),
 

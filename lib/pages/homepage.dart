@@ -1,6 +1,8 @@
 import 'package:elavo/pages/add_recipe.dart'; 
 import 'package:elavo/widget/category_list.dart';
 import 'package:elavo/widget/home_header.dart';
+import 'package:elavo/widget/ingredient_dropdown.dart';
+import 'package:elavo/widget/region_dropdown.dart';
 import 'package:elavo/widget/search_bar_widget.dart';
 import 'package:elavo/widget/support_widget.dart';
 import 'package:elavo/widget/trending_food_list.dart';
@@ -51,6 +53,10 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 20),
                 CategoriesList(),
                 SizedBox(height: 20),
+                IngredientDropdown(),
+                SizedBox(height: 20,),
+                RegionDropdown(),
+                SizedBox(height: 20,),
                 TrendingFoodList(),
               ],
             ),

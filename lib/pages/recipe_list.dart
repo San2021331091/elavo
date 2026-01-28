@@ -4,22 +4,54 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
 class RecipeList extends StatefulWidget {
-  final String categoryName;
+  final String? categoryName;
+  final String? areaName;
+  final String? ingredientName;
 
-  const RecipeList({super.key, required this.categoryName});
+  const RecipeList({super.key, this.categoryName, this.areaName, this.ingredientName});
 
   @override
   State<RecipeList> createState() => _RecipeListState();
 }
 
 class _RecipeListState extends State<RecipeList> {
+  late Future<List<dynamic>> mealsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    mealsFuture = fetchMeals();
+  }
+
+  // 🔹 Fetch meals dynamically based on category, region, or ingredient
   Future<List<dynamic>> fetchMeals() async {
     final dio = Dio();
-    final response = await dio.get(
-      'https://www.themealdb.com/api/json/v1/1/filter.php?c=${widget.categoryName}',
-    );
+    String url;
 
-    return response.data['meals'];
+    if (widget.categoryName != null) {
+      url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=${widget.categoryName}';
+    } else if (widget.areaName != null) {
+      url = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=${widget.areaName}';
+    } else if (widget.ingredientName != null) {
+      url = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=${widget.ingredientName}';
+    } else {
+      return [];
+    }
+
+    final response = await dio.get(url);
+    return response.data['meals'] ?? [];
+  }
+
+  // 🔹 Dynamic AppBar title
+  String get pageTitle {
+    if (widget.categoryName != null) {
+      return widget.categoryName!;
+    } else if (widget.areaName != null) {
+      return "${widget.areaName} Recipes";
+    } else if (widget.ingredientName != null) {
+      return "Recipes with ${widget.ingredientName}";
+    }
+    return "Recipes";
   }
 
   @override
@@ -28,14 +60,13 @@ class _RecipeListState extends State<RecipeList> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: Text(
-          widget.categoryName,
+          pageTitle,
           style: AppWidget.boldfieldTextStyle(color: Colors.white),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-
         centerTitle: true,
         elevation: 0,
         flexibleSpace: Container(
@@ -48,7 +79,6 @@ class _RecipeListState extends State<RecipeList> {
           ),
         ),
       ),
-
       body: Stack(
         children: [
           // 🌈 Background Gradient
@@ -64,9 +94,9 @@ class _RecipeListState extends State<RecipeList> {
             ),
           ),
 
-          // 📄 Content
+          // 📄 Recipe Content
           FutureBuilder<List<dynamic>>(
-            future: fetchMeals(),
+            future: mealsFuture,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
@@ -85,6 +115,15 @@ class _RecipeListState extends State<RecipeList> {
 
               final meals = snapshot.data!;
 
+              if (meals.isEmpty) {
+                return const Center(
+                  child: Text(
+                    "No recipes found",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                );
+              }
+
               return ListView.builder(
                 padding: const EdgeInsets.all(12),
                 itemCount: meals.length,
@@ -92,7 +131,7 @@ class _RecipeListState extends State<RecipeList> {
                   final meal = meals[index];
 
                   return Card(
-                    color: Colors.white.withOpacity(0.12),
+                    color: Colors.white10,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14),
@@ -122,7 +161,6 @@ class _RecipeListState extends State<RecipeList> {
                       ),
                       onTap: () async {
                         final dio = Dio();
-
                         final response = await dio.get(
                           'https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal['idMeal']}',
                         );

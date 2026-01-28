@@ -18,10 +18,22 @@ class _RecipePageState extends State<RecipePage> {
       context: context,
       color: const Color.fromARGB(255, 97, 9, 2),
       position: const RelativeRect.fromLTRB(300, 90, 20, 0),
-      items:  [
-        PopupMenuItem(value: 'favorite', child: Text("❤️ Add to Favorites",style: AppWidget.lightfieldTextStyle(color: Colors.white),)),
+      items: [
+        PopupMenuItem(
+          value: 'favorite',
+          child: Text(
+            "❤️ Add to Favorites",
+            style: AppWidget.lightfieldTextStyle(color: Colors.white),
+          ),
+        ),
 
-        PopupMenuItem(value: 'cancel', child: Text("❌ Cancel",style: AppWidget.lightfieldTextStyle(color: Colors.white ),)),
+        PopupMenuItem(
+          value: 'cancel',
+          child: Text(
+            "❌ Cancel",
+            style: AppWidget.lightfieldTextStyle(color: Colors.white),
+          ),
+        ),
       ],
     );
 
@@ -106,7 +118,7 @@ class _RecipePageState extends State<RecipePage> {
                           radius: 22,
                           backgroundColor: Colors.red,
                           child: Icon(
-                            isLiked ? Icons.favorite_border : Icons.favorite_border_outlined,
+                            isLiked ? Icons.favorite : Icons.favorite_outline,
                             color: Colors.white,
                           ),
                         ),
@@ -189,13 +201,105 @@ class _RecipePageState extends State<RecipePage> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        ...ingredients.map(
-                          (i) => Text(
-                            "• $i",
-                            style: AppWidget.lightfieldTextStyle(
-                              fontSize: 16.0,
-                              color: Colors.white,
-                            ),
+                        SizedBox(
+                          height: 160, // total height for ingredient card
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: ingredients.length,
+                            itemBuilder: (context, index) {
+                              final parts = ingredients[index].split(" - ");
+                              final ingredientName = parts[0];
+                              final measure = parts[1];
+
+                              final imageUrl =
+                                  "https://www.themealdb.com/images/ingredients/$ingredientName.png";
+
+                              return Container(
+                                width: 90,
+                                margin: const EdgeInsets.only(right: 12),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    // 🔢 Number + Ingredient Name
+                                    Text(
+                                      "${index + 1}. $ingredientName",
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: AppWidget.boldfieldTextStyle(
+                                        color: Colors.white,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+
+                                    const SizedBox(height: 8),
+
+                                    // 🖼 Image + Measure Badge
+                                    Stack(
+                                      alignment: Alignment.bottomCenter,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(
+                                            14,
+                                          ),
+                                          child: Image.network(
+                                            imageUrl,
+                                            width: 95,
+                                            height: 95,
+                                            fit: BoxFit.contain,
+                                            errorBuilder:
+                                                (context, error, stackTrace) {
+                                                  return Container(
+                                                    width: 65,
+                                                    height: 65,
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.white12,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            14,
+                                                          ),
+                                                    ),
+                                                    child: const Icon(
+                                                      Icons.fastfood,
+                                                      color: Colors.white54,
+                                                    ),
+                                                  );
+                                                },
+                                          ),
+                                        ),
+
+                                        // 🏷 Measure Badge
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                            bottom: 4,
+                                          ),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 8,
+                                            vertical: 3,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: Colors.red,
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                          ),
+                                          child: Text(
+                                            measure,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.clip,
+                                            style:
+                                                AppWidget.lightfieldTextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.white,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ],
