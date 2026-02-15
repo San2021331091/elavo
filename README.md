@@ -130,7 +130,7 @@ flutter run
 lib/
  ├─ main.dart          # App entry point
  ├─ pages/           # All screens (home, recipe detail, add recipe)
- ├─ widgets/           # Reusable widgets
+ ├─ widget/           # Reusable widgets
  ├─ services/          # API and Supabase integration
          
 ```
